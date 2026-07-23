@@ -8,6 +8,7 @@ services:
       - ./gateway/nginx/conf.d:/etc/nginx/conf.d:ro
     depends_on:
       - api-node
+      - water-gate-frontend
     networks:
       - app_network
 
@@ -16,6 +17,15 @@ services:
     container_name: api_node
     expose:
       - "3000"
+    networks:
+      - app_network
+
+  water-gate-frontend:
+    build:
+      context: ./services/water-gate-frontend
+    container_name: water_gate_frontend
+    expose:
+      - "80"
     networks:
       - app_network
 
