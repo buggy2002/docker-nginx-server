@@ -1,1 +1,1 @@
-# Dockder : NginX server
+# Dockder nginx server
